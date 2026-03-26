@@ -56,13 +56,13 @@ public class Main {
         String nejkratsiSlovo = "";
         for (String s : slova) {
             if (s.length() == maxDelka) {
-                nejdelsiSlovo += s + "";
+                nejdelsiSlovo = s;
             }
             if (s.length() == minDelka) {
-                nejkratsiSlovo += s + "";
+                nejkratsiSlovo = s;
             }
         }
-        String vysledek = "počet slov: " + pocetSlov + " průměrná délka " + prumer + " nejdelší slovo: " + nejdelsiSlovo + " nejkratší slovo: " + nejkratsiSlovo;
+        String vysledek = "počet slov: " + pocetSlov + ", průměrná délka " + prumer + ", nejdelší slovo: " + nejdelsiSlovo + ", nejkratší slovo: " + nejkratsiSlovo;
         Files.writeString(statistikaSouboru, vysledek);
 
     }
