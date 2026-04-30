@@ -1,1 +1,2 @@
-počet slov: 110, průměrná délka 5.281818181818182, nejdelší slovo: bezpečnost, nejkratší slovo: čaj
+počet slov: 110, průměrná délka 5.281818181818182, nejdelší slovo: klávesnice vzdálenost bezpečnost, nejkratší slovo: les dům myš síť den noc čas trh sýr čaj
+Všechna slova s hledanou částí: vesnice ulice učitel kniha sešit židle klávesnice monitor internet kapitola hodina minuta podzim zima velikost rodina rodič firma silnice letiště zelenina

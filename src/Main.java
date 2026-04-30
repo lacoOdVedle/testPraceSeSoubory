@@ -12,7 +12,7 @@ public class Main {
         Path cenzurovaneSlova = Path.of("src/data/zakazana_slova.txt");
 
         List<String> zakazanaSlova = Files.readAllLines(cenzurovaneSlova);
-        String text = Files.readString(vetySoubor);
+        String text = Files.readString(vetySoubor).toLowerCase();
         for (String slova : zakazanaSlova) {
             String slovaFinal = slova.trim().toLowerCase();
             if (slovaFinal.isEmpty()) {
@@ -56,13 +56,25 @@ public class Main {
         String nejkratsiSlovo = "";
         for (String s : slova) {
             if (s.length() == maxDelka) {
-                nejdelsiSlovo = s;
+                nejdelsiSlovo += " " + s;
             }
             if (s.length() == minDelka) {
-                nejkratsiSlovo = s;
+                nejkratsiSlovo += " " + s;
             }
         }
-        String vysledek = "počet slov: " + pocetSlov + ", průměrná délka " + prumer + ", nejdelší slovo: " + nejdelsiSlovo + ", nejkratší slovo: " + nejkratsiSlovo;
+        String hledanaCastSlova = "i";
+        String vsechnaShodujiciseSlova = "";
+        for (String s : slova) {
+            if (s.toLowerCase().contains(hledanaCastSlova)) {
+                vsechnaShodujiciseSlova += " " + s;
+            }
+        }
+        if (vsechnaShodujiciseSlova == "") {
+            vsechnaShodujiciseSlova = " žádné slovo neobsahuje: " + hledanaCastSlova;
+        }
+
+        String hledanaSlova = "Všechna slova s hledanou částí:" + vsechnaShodujiciseSlova;
+        String vysledek = "počet slov: " + pocetSlov + ", průměrná délka " + prumer + ", nejdelší slovo:" + nejdelsiSlovo + ", nejkratší slovo:" + nejkratsiSlovo + "\n" + hledanaSlova;
         Files.writeString(statistikaSouboru, vysledek);
 
     }
